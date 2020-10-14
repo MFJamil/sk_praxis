@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Saad Kundakji</title>
+  <META http-equiv=Content-Type content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="scripts/lib/utils.js"></script>
+  <script type="text/javascript" src="scripts/lib/anim_lib.js"></script>
+  <script type="text/javascript" src="scripts/lib/anim_reader_lib.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body style="margin:0;" >
+
+<!-- Main Div used for layout purpose -->
+<div id="bodyOffsetDiv" style="width:100%;height:100%;position:relative;top:1px;left:0px;">
+
+<!-- loading Progress section -->
+<div id="progressDiv">
+	<table class="progressLayout">
+		<tr><td class="progressTextCell">Die Seite wird geladen ...</td></tr>
+		<tr><td style="height:20px;">
+			<table id="progressTable" class="progressTable">
+				<tr><td id="loadProgress"></td><td id="totalLoad"></td></tr>
+			</table>
+		</td></tr>
+	</table>
+</div>
+
+<!-- Control section-->
+<div id="controlPanelBack" class ="controlPanelBasic controlPanelBack"></div>
+<div id="controlPanel" class ="controlPanelBasic controlPanel" onclick="handleControl()">
+	<div style="float:left;position:relative;top:8px;">
+		<table style="width:100%;height:100%;padding-left:10px;">
+			<tr>
+				<td><img id="lang_de" src="images/control/de_32.png" class="langIcon" /></td>
+				<td><img id="lang_en" src="images/control/uk_32.png" class="langIcon"/></td>
+				<td><img id="lang_ar" src="images/control/sa_32.png" class="langIcon"/></td>
+			</tr>
+			<tr>
+				<td><div onclick="changeBackgroundTheme('bk')" class="themeDiv themeDiv_bk"></div></td>
+				<td><div onclick="changeBackgroundTheme('bl')" class="themeDiv themeDiv_bl"></div></td>
+				<td><div onclick="changeBackgroundTheme('br')" class="themeDiv themeDiv_br"></div></td>
+			</tr>
+			<tr>
+				<td><div onclick="changeBackgroundTheme('gr')" class="themeDiv themeDiv_gr"></div></td>
+				<td><div onclick="changeBackgroundTheme('rd')" class="themeDiv themeDiv_rd"></div></td>
+				<td><div onclick="changeBackgroundTheme('ga')" class="themeDiv themeDiv_ga"></div></td>
+			</tr>
+		</table>
+	</div>
+	<div style="float:right;height:100%;"><div class="controlIconDiv">
+	<img id="settingsImg" src="images/control/Settings_32.png" style="margin-right:4px;" onload="imageLoaded(this);" />
+	</div></div>
+</div>
+
+<!-- Header image slider -->
+
+<div id="headerImgCont" class="headerImgCont">
+	<div id="singleImageCont_1" class="singleImageCont">
+		<img id="singleHeaderImg1" src="images/header/slide/slide_01.jpg" class="singleImage" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageCont_2" class="singleImageCont">
+		<img id="singleHeaderImg2" src="images/header/slide/slide_02.jpg" class="singleImage" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageCont_3" class="singleImageCont">
+		<img id="singleHeaderImg3" src="images/header/slide/slide_03.jpg" class="singleImage" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageCont_4" class="singleImageCont">
+		<img id="singleHeaderImg4" src="images/header/slide/slide_04.jpg" class="singleImage" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageCont_5" class="singleImageCont">
+		<img id="singleHeaderImg5" src="images/header/slide/slide_05.jpg" class="singleImage" onload="imageLoaded(this);" />
+	</div>
+
+</div>
+<div id="headerImgShadowCont" class="headerImgShadowCont">
+	<div id="singleImageShadowCont_1" class="singleImageShadowCont">
+		<img id="singleHeaderShadowImg1" src="images/header/slide/slide_01_shadow.png" class="singleImageShadow" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageShadowCont_2" class="singleImageShadowCont">
+		<img id="singleHeaderShadowImg2" src="images/header/slide/slide_02_shadow.png" class="singleImageShadow" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageShadowCont_3" class="singleImageShadowCont">
+		<img id="singleHeaderShadowImg3" src="images/header/slide/slide_03_shadow.png" class="singleImageShadow" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageShadowCont_4" class="singleImageShadowCont">
+		<img id="singleHeaderShadowImg4" src="images/header/slide/slide_04_shadow.png" class="singleImageShadow" onload="imageLoaded(this);" />
+	</div>
+	<div id="singleImageShadowCont_5" class="singleImageShadowCont">
+		<img id="singleHeaderShadowImg5" src="images/header/slide/slide_05_shadow.png" class="singleImageShadow" onload="imageLoaded(this);" />
+	</div>
+
+</div>
+<div id="headerImgShadowCont" class="headerImgShadowRealCont">
+	<div id="singleImageShadowRealCont" class="singleImageShadowRealCont">
+		<img id="singleImageShadowReal" src="images/header/shadow_400_150_bk.png" class="singleImageShadowReal" onload="imageLoaded(this);" />
+	</div>
+</div>
+
+<!-- Praxis title section -->
+<div id="titleDiv">
+	<img id="titleImage" src="images/header/Title_04.png" onload="imageLoaded(this);"  />
+</div>
+<!-- Doctors Pic section -->
+<div id="docsDiv">
+	<img id="docsImage" src="images/header/docs.png"  onload="imageLoaded(this);" />
+</div>
+
+
+<!-- Main Menu section -->
+<!-- menu text section -->
+<div id="menuText_1" class="menuTextCont menu1">
+	<div class="menu_text">Start</div>
+</div>
+<div id="menuText_2" class="menuTextCont menu2">
+	<div class="menu_text">Praxis</div>
+</div>
+<div id="menuText_3" class="menuTextCont menu3">
+	<div class="menu_text">Leistungen</div>
+</div>
+<div id="menuText_4" class="menuTextCont menu4">
+	<div class="menu_text">Kontakt</div>
+</div>
+<div id="menuText_5" class="menuTextCont menu5">
+	<div class="menu_text">Notdienst</div>
+</div>
+
+<!-- Menu icons section -->
+<div id="menu1" class="menu menu1" >
+	<div><img id="menuImg1" class="menuIcon" src="images/header/icon/home.png" onmouseover="startProcessIdAnimation('menuText_1_fadeIn')" onmouseout="startProcessIdAnimation('menuText_1_fadeOut')" onclick="switchContents('contents_1')" onload="imageLoaded(this);" /></div>
+	<div><img id="menuImg1_shadow" src="images/header/icon/home_shadow.png" onload="imageLoaded(this);" /></div>
+</div>
+<div id="menu2" class="menu menu2">
+	<div><img id="menuImg2" class="menuIcon" src="images/header/icon/praxis.png" onmouseover="startProcessIdAnimation('menuText_2_fadeIn')" onmouseout="startProcessIdAnimation('menuText_2_fadeOut')"  onclick="switchContents('contents_2')" onload="imageLoaded(this);" /></div>
+	<div><img id="menuImg2_shadow" src="images/header/icon/praxis_shadow.png" onload="imageLoaded(this);" /></div>
+</div>
+<div id="menu3" class="menu menu3">
+	<div><img id="menuImg3" class="menuIcon" src="images/header/icon/services.png" onmouseover="startProcessIdAnimation('menuText_3_fadeIn')" onmouseout="startProcessIdAnimation('menuText_3_fadeOut')" onclick="switchContents('contents_3')" onload="imageLoaded(this);" /></div>
+	<div><img id="menuImg3_shadow" src="images/header/icon/services_shadow.png" onload="imageLoaded(this);" /></div>
+</div>
+<div id="menu4" class="menu menu4">
+	<div><img id="menuImg4" class="menuIcon" src="images/header/icon/contact.png" onmouseover="startProcessIdAnimation('menuText_4_fadeIn')" onmouseout="startProcessIdAnimation('menuText_4_fadeOut')" onclick="switchContents('contents_4')" onload="imageLoaded(this);" /></div>
+	<div><img id="menuImg4_shadow" src="images/header/icon/contact_shadow.png" onload="imageLoaded(this);" /></div>
+</div>
+<div id="menu5" class="menu menu5">
+	<div><img id="menuImg5" class="menuIcon" src="images/header/icon/notdienst.png" onmouseover="startProcessIdAnimation('menuText_5_fadeIn')" onmouseout="startProcessIdAnimation('menuText_5_fadeOut')" onclick="switchContents('contents_5')" onload="imageLoaded(this);" /></div>
+	<div><img id="menuImg5_shadow" src="images/header/icon/notdienst_shadow.png" onload="imageLoaded(this);" /></div>
+</div>
+
+
+
+<!-- Pages Section -->
+<!-- Start Page -->
+<div id="contents_1" class="contents">
+	<h2>Welkommen bei der Praxis !! </h2>
+	<p>Wie wichtig es ist, ohne Reue kräftig zubeien zu können, belegen viele Redewendungen aus unserem Alltag: Ein saftiger Apfel sieht zum Anbeißen lecker aus und manchmal muss man sich eben einfach durchbeißen.</p>
+	<p>Schwerpunkte unserer Praxis sind daher die Funktinsdiagnostik von Gebiss, Kaumuskulatur und Kiefergelenk und das Einsetzen von Zahnimplantaten. Für einen schmerzfreien und attraktiven Biss!</p>
+</div>
+<!-- Praxis Page -->
+<div id="contents_2" class="contents">
+		<div id="accordPraxis">
+			<!-- Doctors Tab -->
+			<script>newAccordTab("doctorsTab","Ärtzte","doctorsContents");</script>
+			<div id="doctorsContents" class="accordTabContents">
+				<br>
+				<table style="width:100%;height:auto;color:#fff;">
+					<tr>
+						<td><img id="docPicSaad" style="border:2px solid #ff0;border-radius:5px;" src="images/pages/praxis/doctors/doc_pic1.jpg" onload="imageLoaded(this);" /></td>
+						<td> &nbsp;</td>
+						<td><h4>Saad Kundakji</h4> <p>He has founded this praxis years ago, his contribution in destroying the people teeth was valuable and became so popular in no time!! </p></td>
+					</tr>
+					<tr><td colspan="3"><br></tr>
+					<tr>
+						<td><img id="docPicHamed" style="border:2px solid #ff0;border-radius:5px;" src="images/pages/praxis/doctors/doc_pic2.jpg" onload="imageLoaded(this);" /></td>
+						<td> &nbsp;</td>
+						<td><h4>Hamed Al Kahlout</h4> <p>Is an affective in the team to continue destroying the people teeth in Mainz-Kostheim region!! </p></td>
+					</tr>
+
+				</table>
+			</div>
+			<!-- Team Tab -->
+			<script>newAccordTab("teamTab","Team","teamContents");</script>
+			<div id="teamContents" class="accordTabContents">
+				<br>
+				<table style="width:100%;height:auto;color:#fff;">
+					<tr>
+						<td><img id="teamPic1" style="border:2px solid #ff0;border-radius:5px;" src="images/pages/praxis/team/team_pic1.jpg" onload="imageLoaded(this);" /></td>
+						<td> &nbsp;</td>
+						<td><h4>Dina Jamil</h4> <p>Dina is a basic team player because with her great efforts we managed only to work on the web page after 3 years of latency</p></td>
+					</tr>
+					<tr><td colspan="3"><br></tr>
+					<tr>
+						<td><img id="teamPic2" style="border:2px solid #ff0;border-radius:5px;" src="images/pages/praxis/team/team_pic2.jpg" onload="imageLoaded(this);" /></td>
+						<td> &nbsp;</td>
+						<td><h4>Sarmad Jamil</h4> <p>During his early years, Sarmad managed to delay the work so that the new generation of web development is out to the market which made the decision of going to the new design is a much better choice</p></td>
+					</tr>
+
+				</table>
+			</div>
+			<!-- Tour Tab -->
+			<script>newAccordTab("tourTab","Tour","tourContents");</script>
+			<div id="tourContents" class="accordTabContents">
+				<br>
+				<div id="tourPicsContainer" style="position:relative;overflow:hidden;left:100px;top:1px;width:600px;height:450px;border:2px solid #fff;border-radius:10px;">
+					<div id="slidePic1" class="tourDiv"><img id ="tourImg1" src="images/pages/praxis/tour/cln_1.jpg" onload="imageLoaded(this);"  /></div>
+					<div id="slidePic2" class="tourDiv"><img id ="tourImg2" src="images/pages/praxis/tour/cln_2.jpg" onload="imageLoaded(this);" /></div>
+					<div id="slidePic3" class="tourDiv"><img id ="tourImg3" src="images/pages/praxis/tour/cln_3.jpg" onload="imageLoaded(this);" /></div>
+					<div id="slidePic4" class="tourDiv"><img id ="tourImg4" src="images/pages/praxis/tour/cln_4.jpg" onload="imageLoaded(this);" /></div>
+					<div id="slidePic5" class="tourDiv"><img id ="tourImg5" src="images/pages/praxis/tour/cln_5.jpg" onload="imageLoaded(this);" /></div>
+					<div id="slidePic6" class="tourDiv"><img id ="tourImg6" src="images/pages/praxis/tour/cln_6.jpg" onload="imageLoaded(this);" /></div>
+					<div id="slidePic7" class="tourDiv"><img id ="tourImg7" src="images/pages/praxis/tour/cln_7.jpg" onload="imageLoaded(this);" /></div>
+					
+				</div>
+			</div>
+		</div>
+</div>
+
+<!-- Leistungen Page -->
+<div id="contents_3" class="contents">
+	<div id="accordLeistungen">
+		<script>newWideAccordTab("implantologieTab","Implantologie","implantologieContents");</script>
+		<div id="implantologieContents" class="accordTabContents">
+			<p>Als Implantat bezeichnet man in der Zahnheilkunde eine künstliche Zahnwurzel. Sie wird dauerhaft im Kieferknochen verankert und muss die tägliche Kaubelastung wie eine natürliche Zahnwurzel problemlos aushalten. Implantate bestehen in der Regel aus Titan, einem gewebefreundlichen Material, das keine allergischen Reaktionen auslöst. Damit Kieferknochen und Implantat zu einer stabilen und sicheren Einheit zusammenwachsen können, ist die Oberfläche der künstlichen Zahnwurzel angeraut. Implantate werden eingesetzt bei Einzelzahnersatz, verkürzten Zahnreihen und im Fall einer Totalprothetik.</p>
+			<img id="caseShower_implantologie" src="images/control/zoom_in_32.png" onclick="handleCaseShow(this,'caseDivCont',700,'implantologieContents',200)" class="caseViewer" onload="imageLoaded(this);" />
+			<br>
+			<div id="caseDivCont" class="caseDivCont">	
+				<div id="caseDivBefore" class="caseDiv caseBefore"><img id="caseImgBefore" class="caseImg" src="images/pages/leistungen/implantologie/1/1b.jpg" onload="imageLoaded(this);" /></div>
+				<div id="caseDivAfter" class="caseDiv caseAfter"><img id="caseImgAfter" class="caseImg" src="images/pages/leistungen/implantologie/1/1a.jpg" onload="imageLoaded(this);" /></div>
+				
+			</div>
+		</div>
+		<script>newWideAccordTab("chirurgischeTab","Chirurgische Leistungen","chirurgischeContents");</script>
+		<script>newWideAccordTab("funktionsdiagnostikTab","Funktionsdiagnostik","funktionsdiagnostikContents");</script>
+		<script>newWideAccordTab("allgemeineTab","Allgemeine Diagnostik","allgemeineContents");</script>
+		<script>newWideAccordTab("kosmetischeTab","Kosmetische Leistungen","kosmetischeContents");</script>
+		<script>newWideAccordTab("vorsorgeTab","Vorsorge","vorsorgeContents");</script>
+		<script>newWideAccordTab("cerecTab","Cerec","cerecContents");</script>
+		<script>newWideAccordTab("zahnerhaltungTab","Zahnerhaltung","zahnerhaltungContents");</script>
+		<script>newWideAccordTab("patenschaftTab","Patenschaft","patenschaftContents");</script>
+		
+	</div>
+</div>
+
+<!-- Kontakt Page -->
+<div id="contents_4" class="contents">
+	<div id="accordKontakt">
+		<script>newAccordTab("mainzTab","Mainz","mainzContents");</script>
+		<div id="mainzContents" class="accordTabContents">
+			<table style="width:700px;height:auto;color:#fff;">
+				<tr>
+					
+					<td>
+						<div style="width:300px;height:150px;">
+						<table style="color:#fff;">
+							<!--<tr><td colspan="2" style="text-align:center;color:#ff0;"><h3>Mainz</h3></td></tr>-->
+							<tr><td rowspan="2"> <img id="mainzAdd" src="images/pages/kontakt/add_48.png" onload="imageLoaded(this);" /></td><td>Münsterplatz 1, Altstadt</td></tr>
+							<tr><td>55116 Mainz, Rheinland-Pfalz</td></tr>
+							<tr><td><img id="mainzTel" src="images/pages/kontakt/tel_48.png" onload="imageLoaded(this);" /></td><td>+49 (06131) 229816</td></tr>
+							<tr><td><img id="mainzFax" src="images/pages/kontakt/fax_48.png" onload="imageLoaded(this);" /></td><td>+49 (06131) 5766931</td></tr>
+						</table>
+						</div>
+					</td>
+					<td style="text-align:right;"><img id="mainzPraxis" src="images/header/slide/slide_05.jpg" style="width:300px;height:225px;border:2px solid #ff0;border-radius:5px;" onload="imageLoaded(this);" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a target="_blank" href="https://maps.google.de/maps?q=saad+kundakji&hl=de&ll=50.000016,8.263875&spn=0.003455,0.009645&sll=51.426614,10.458984&sspn=6.865164,19.753418&t=h&hq=saad+kundakji&z=17">
+							<img id="mainzPraxisMap" style="border:2px solid #ff0;border-radius:8px;"src="images/pages/kontakt/maps/mainz_praxis_map.jpg" onload="imageLoaded(this);" />
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script>newAccordTab("kostheimTab","Mainz-Kostheim","kostheimContents");</script>
+		<div id="kostheimContents" class="accordTabContents">
+			<table style="width:700px;height:auto;color:#fff;">
+				<tr>
+					<td>
+						<table style="width:100%;height:auto;color:#fff;">
+							<!--<tr><td colspan="2" style="text-align:center;color:#ff0;"><h3>Mainz Kostheim</h3></td></tr>-->
+							<tr><td rowspan="2"> <img id="kostheimAdd" src="images/pages/kontakt/add_48.png" onload="imageLoaded(this);" /></td><td>Taunusstr. 32</td></tr>
+							<tr><td>55246 Mainz-Kostheim</td></tr>
+							<tr><td><img id="kostheimTel" src="images/pages/kontakt/tel_48.png" onload="imageLoaded(this);" /></td><td>+49 (06134) 4106</td></tr>
+							<tr><td><img id="kostheimFax" src="images/pages/kontakt/fax_48.png" onload="imageLoaded(this);" /></td><td>+49 (06134) 4106</td></tr>
+						</table>
+					</td>
+					<td style="text-align:right;"><img id="kostheimPraxis" src="images/header/slide/slide_05.jpg" style="width:300px;height:225px;border:2px solid #ff0;border-radius:5px;" onload="imageLoaded(this);" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a target="_blank" href="https://maps.google.de/maps?q=50.002862,8.304854&hl=de&ll=50.002816,8.309033&spn=0.00691,0.01929&num=1&t=h&z=16">
+							<img id="kostheimPraxisMap" style="border:2px solid #ff0;border-radius:8px;"src="images/pages/kontakt/maps/mainz_kostheim_praxis_map.jpg" onload="imageLoaded(this);" />
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+<!-- Notdienst Page -->
+<div id="contents_5" class="contents">
+	<h2>Was ist im Notfall zu tun? </h2>
+	<p>Sollten Sie außerhalb der Sprechzeiten oder an Sonn- und Feiertagen starke Zahnschmerzen oder andere akute Beschwerden bekommen, dann entnehmen Sie die Nummer der diensthabenden Kollegen/innen aus der örtlichen Tagespresse (Hanauer Anzeiger oder Hanauer Post).</p>
+</div>
+
+
+
+
+<!-- Animation part -->
+
+
+<!-- Title and doctors Image animation -->
+	<my:process id="fadeTitleAndDocs" info="start-time:500;start-type:afterTime;type:f;time:1500;frame:45" count="2">
+		<my:object id="titleDiv" info="fade:true;"></my:object>
+		<my:object id="docsDiv" info="fade:true;"></my:object>
+	</my:process>
+
+
+<!-- Header Images animation -->
+<my:scenario id="imageShow" count="4" >
+	<my:process id="slide1" info="start-time:0;start-type:afterTime;type:fm;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_1" info="fade:true;srcY:300;dstY:0;"></my:object>
+		<my:object id="singleImageShadowCont_1" info="fade:true;srcY:-300;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fade1" info="start-time:15000;start-type:afterPrevious;type:f;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_1" info="fade:false;"></my:object>
+		<my:object id="singleImageShadowCont_1" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="slide2" info="start-time:0;start-type:afterPrevious;type:fm;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_2" info="fade:true;srcY:300;dstY:0;"></my:object>
+		<my:object id="singleImageShadowCont_2" info="fade:true;srcY:-300;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fade2" info="start-time:15000;start-type:afterPrevious;type:f;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_2" info="fade:false;"></my:object>
+		<my:object id="singleImageShadowCont_2" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="slide3" info="start-time:0;start-type:afterPrevious;type:fm;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_3" info="fade:true;srcY:300;dstY:0;"></my:object>
+		<my:object id="singleImageShadowCont_3" info="fade:true;srcY:-300;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fade3" info="start-time:15000;start-type:afterPrevious;type:f;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_3" info="fade:false;"></my:object>
+		<my:object id="singleImageShadowCont_3" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="slide4" info="start-time:0;start-type:afterPrevious;type:fm;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_4" info="fade:true;srcY:300;dstY:0;"></my:object>
+		<my:object id="singleImageShadowCont_4" info="fade:true;srcY:-300;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fade4" info="start-time:15000;start-type:afterPrevious;type:f;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_4" info="fade:false;"></my:object>
+		<my:object id="singleImageShadowCont_4" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="slide5" info="start-time:0;start-type:afterPrevious;type:fm;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_5" info="fade:true;srcY:300;dstY:0;"></my:object>
+		<my:object id="singleImageShadowCont_5" info="fade:true;srcY:-300;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fade5" info="start-time:15000;start-type:afterPrevious;type:f;time:1500;frame:60" count="2">
+		<my:object id="singleImageCont_5" info="fade:false;"></my:object>
+		<my:object id="singleImageShadowCont_5" info="fade:false;"></my:object>
+	</my:process>
+
+</my:scenario>
+
+<!-- Case show animation -->
+<my:scenario id="caseShow" count="4" >
+	<my:process id="beforeFade" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+		<my:object id="caseDivBefore" info="fade:true;"></my:object>
+	</my:process>
+	<my:process id="afterFade" info="start-time:1500;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+		<my:object id="caseDivAfter" info="fade:true;"></my:object>
+	</my:process>
+
+	<my:process id="moveToSides" info="start-time:3000;start-type:afterTime;type:m;time:1000;frame:60" count="4">
+		<my:object id="caseDivBefore" info="srcX:210;srcY:0;dstX:0;dstY:250;"></my:object>
+		<my:object id="caseDivAfter"  info="srcX:210;srcY:0;dstX:500;dstY:250;"></my:object>
+	</my:process>
+</my:scenario>
+<my:scenario id="caseShowEnd" count="2" >
+	<my:process id="moveToSides" info="start-time:0;start-type:afterTime;type:mf;time:1000;frame:60" count="2">
+		<my:object id="caseDivBefore" info="fade:false;dstX:210;dstY:0;srcX:0;srcY:250;"></my:object>
+		<my:object id="caseDivAfter"  info="fade:false;dstX:210;dstY:0;srcX:500;srcY:250;"></my:object>
+	</my:process>
+</my:scenario>
+
+<!-- Tour animation -->
+<my:scenario id="tourShow" count="4" >
+	<my:process id="fadePic1In" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic1" info="fade:true;"></my:object>
+	</my:process>
+	<my:process id="fadePic1Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic1" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="fadePic2In" info="start-time:0;start-type:afterPrevious;type:fm;time:1000;frame:30" count="2">
+		<my:object id="slidePic2" info="fade:true;srcX:0;dstX:0;srcY:-450;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fadePic2Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic2" info="fade:false;"></my:object>
+	</my:process>
+	<my:process id="fadePic3In" info="start-time:0;start-type:afterPrevious;type:fm;time:1000;frame:30" count="2">
+		<my:object id="slidePic3" info="fade:true;srcX:-600;dstX:0;"></my:object>
+	</my:process>
+	<my:process id="fadePic3Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic3" info="fade:false;"></my:object>
+	</my:process>
+
+	<my:process id="fadePic4In" info="start-time:0;start-type:afterPrevious;type:fm;time:1000;frame:30" count="2">
+		<my:object id="slidePic4" info="fade:true;srcX:-600;srcY:-450;dstX:0;dstY:0;"></my:object>
+	</my:process>
+	<my:process id="fadePic4Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic4" info="fade:false;"></my:object>
+	</my:process>
+
+		<my:process id="fadePic5In" info="start-time:0;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic5" info="fade:true;"></my:object>
+	</my:process>
+	<my:process id="fadePic5Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic5" info="fade:false;"></my:object>
+	</my:process>
+
+		<my:process id="fadePic6In" info="start-time:0;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic6" info="fade:true;"></my:object>
+	</my:process>
+	<my:process id="fadePic6Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic6" info="fade:false;"></my:object>
+	</my:process>
+
+		<my:process id="fadePic7In" info="start-time:0;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic7" info="fade:true;"></my:object>
+	</my:process>
+	<my:process id="fadePic7Out" info="start-time:4000;start-type:afterPrevious;type:f;time:1000;frame:30" count="2">
+		<my:object id="slidePic7" info="fade:false;"></my:object>
+	</my:process>
+
+</my:scenario>
+
+
+<!-- menu fade processes -->
+<my:process id="fadeMenu1" info="start-time:5000;start-type:afterTime;type:f;time:2000;frame:60" count="2">
+	<my:object id="menu1" info="fade:true;"></my:object>
+</my:process>
+<my:process id="fadeMenu2" info="start-time:5000;start-type:afterTime;type:f;time:2000;frame:60" count="2">
+	<my:object id="menu2" info="fade:true;"></my:object>
+</my:process>
+<my:process id="fadeMenu3" info="start-time:5000;start-type:afterTime;type:f;time:2000;frame:60" count="2">
+	<my:object id="menu3" info="fade:true;"></my:object>
+</my:process>
+<my:process id="fadeMenu4" info="start-time:5000;start-type:afterTime;type:f;time:2000;frame:60" count="2">
+	<my:object id="menu4" info="fade:true;"></my:object>
+</my:process>
+<my:process id="fadeMenu5" info="start-time:5000;start-type:afterTime;type:f;time:2000;frame:60" count="2">
+	<my:object id="menu5" info="fade:true;"></my:object>
+</my:process>
+
+<!-- Menu Text fading -->
+<my:process id="menuText_1_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_1" info="fade:true;"></my:object>
+</my:process>
+<my:process id="menuText_1_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_1" info="fade:false;"></my:object>
+</my:process>
+
+<my:process id="menuText_2_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_2" info="fade:true;"></my:object>
+</my:process>
+<my:process id="menuText_2_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_2" info="fade:false;"></my:object>
+</my:process>
+
+<my:process id="menuText_3_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_3" info="fade:true;"></my:object>
+</my:process>
+<my:process id="menuText_3_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_3" info="fade:false;"></my:object>
+</my:process>
+
+<my:process id="menuText_4_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_4" info="fade:true;"></my:object>
+</my:process>
+<my:process id="menuText_4_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_4" info="fade:false;"></my:object>
+</my:process>
+<my:process id="menuText_5_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_5" info="fade:true;"></my:object>
+</my:process>
+<my:process id="menuText_5_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:500;frame:10" count="2">
+	<my:object id="menuText_5" info="fade:false;"></my:object>
+</my:process>
+
+
+<!-- Contents fade -->
+<my:process id="contents_1_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_1" info="fade:true;"></my:object>
+</my:process>
+<my:process id="contents_1_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_1" info="fade:false;"></my:object>
+</my:process>
+
+<my:process id="contents_2_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_2" info="fade:true;"></my:object>
+</my:process>
+<my:process id="contents_2_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_2" info="fade:false;"></my:object>
+</my:process>
+<my:process id="contents_3_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_3" info="fade:true;"></my:object>
+</my:process>
+<my:process id="contents_3_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_3" info="fade:false;"></my:object>
+</my:process>
+<my:process id="contents_4_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_4" info="fade:true;"></my:object>
+</my:process>
+<my:process id="contents_4_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_4" info="fade:false;"></my:object>
+</my:process>
+
+<my:process id="contents_5_fadeIn" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_5" info="fade:true;"></my:object>
+</my:process>
+<my:process id="contents_5_fadeOut" info="start-time:0;start-type:afterTime;type:f;time:1000;frame:30" count="2">
+	<my:object id="contents_5" info="fade:false;"></my:object>
+</my:process>
+
+
+<!-- Team page animation -->
+<my:process id="doctorsContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:1000;frame:20" count="2">
+	<my:object id="doctorsContents" info="fade:true;srcH:0;dstH:400;"></my:object>
+</my:process>
+
+<my:process id="doctorsContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:1000;frame:20" count="2">
+	<my:object id="doctorsContents" info="fade:false;srcH:400;dstH:0;"></my:object>
+</my:process>
+
+<my:process id="teamContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:30" count="2">
+	<my:object id="teamContents" info="fade:true;srcW:700;srcH:0;dstH:400;dstW:700;"></my:object>
+</my:process>
+
+<my:process id="teamContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:20" count="2">
+	<my:object id="teamContents" info="fade:false;srcW:700;srcH:400;dstH:0;dstW:700;"></my:object>
+</my:process>
+
+<my:process id="tourContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:30" count="2">
+	<my:object id="tourContents" info="fade:true;srcH:0;dstH:500;"></my:object>
+</my:process>
+
+<my:process id="tourContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:20" count="2">
+	<my:object id="tourContents" info="fade:false;srcH:500;dstH:0;"></my:object>
+</my:process>
+
+
+<!-- Kontakt page animation -->
+<my:process id="mainzContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:30" count="2">
+	<my:object id="mainzContents" info="fade:true;srcH:0;dstH:700;"></my:object>
+</my:process>
+
+<my:process id="mainzContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:20" count="2">
+	<my:object id="mainzContents" info="fade:false;srcH:700;dstH:0;"></my:object>
+</my:process>
+
+<my:process id="kostheimContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:30" count="2">
+	<my:object id="kostheimContents" info="fade:true;srcH:0;dstH:700;"></my:object>
+</my:process>
+
+<my:process id="kostheimContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:20" count="2">
+	<my:object id="kostheimContents" info="fade:false;srcH:700;dstH:0;"></my:object>
+</my:process>
+
+<!-- leistungen page animation -->
+
+<my:process id="implantologieContents_populate" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:30" count="2">
+	<my:object id="implantologieContents" info="fade:true;srcH:0;dstH:200;"></my:object>
+</my:process>
+
+<my:process id="implantologieContents_fold" info="start-time:0;start-type:afterTime;type:fs;time:500;frame:20" count="2">
+	<my:object id="implantologieContents" info="fade:false;srcH:200;dstH:0;"></my:object>
+</my:process>
+
+<!-- Control Panel animation -->
+<my:process id="controlPanel_populate" info="start-time:0;start-type:afterTime;type:m;time:500;frame:20" count="2">
+	<my:object id="controlPanel" info="srcX:-160;dstX:0;"></my:object>
+	<my:object id="controlPanelBack" info="srcX:-160;dstX:0;"></my:object>
+</my:process>
+
+<my:process id="controlPanel_fold" info="start-time:0;start-type:afterTime;type:m;time:500;frame:20" count="2">
+	<my:object id="controlPanel" info="srcX:0;dstX:-160;"></my:object>
+	<my:object id="controlPanelBack" info="srcX:0;dstX:-160;"></my:object>
+</my:process>
+
+
+
+
+</div>
+</body>
+</html>
+	
+
+

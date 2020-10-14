@@ -1,0 +1,244 @@
+	body{
+		background-color:#000;
+	}
+	
+	#progressDiv{
+		position:absolute;
+		width:400px;
+		height:100px;
+		left:425px;
+		top:200px;
+		border-radius:5px;
+		background-color:#fff;
+		border: 2px solid #aaa;
+		border-style:groove;
+		z-index:100;
+		
+	}
+	.progressLayout{
+		position:relative;
+		left:15%;
+		top:15%;
+		width:70%;
+		height:70%;
+	}
+	.progressTable{
+		width:100%;
+		height:100%;
+		border: 1px solid #bbb;
+		border-radius:2px;
+		
+	}
+	.progressTextCell{
+		color:#000;
+		font-weight:bold;
+		font-family:verdana;
+		
+	}
+	#loadProgress{
+		--background-color:#4b94e6;
+		background:#4b94e6 url(../images/css/blueGrad.jpg) repeat-x;
+		border-radius:2px;
+	}
+	
+	#totalLoad{
+		background-color: #fff;
+		border-radius:2px;
+	}
+	
+	.langIcon{
+		cursor: pointer; cursor: hand;
+	}
+	.controlPanelBasic{
+		position:fixed;
+		width: 200px;
+		height:104px;
+		bottom:250px;
+		left:-160px;
+		border-radius:6px;
+	}
+
+	.controlPanelBack{
+		background-color:#999;
+		opacity:0.5;filter:alpha(opacity=50);
+	}
+
+	.controlPanel{
+	}
+	.controlIconDiv{
+		top:36px;
+		position:relative;
+		cursor: pointer; cursor: hand;
+	}
+	.themeDiv{
+		width;32px;height:16px;border-radius:2px;
+		cursor: pointer; cursor: hand;
+		
+	}
+	.themeDiv_bl{background-color:#000059;}	
+	.themeDiv_bk{background-color:#000;}
+	.themeDiv_br{background-color:#472c0e;}
+	.themeDiv_gr{background-color:#023b02;}
+	.themeDiv_rd{background-color:#580909;}
+	.themeDiv_ga{background-color:#2f3031;}
+	
+	.headerImgCont{
+		overflow:hidden;position:absolute;width:400px;height:300px;left:450px;top:40px;-- border:1px solid #fff;
+	}
+	.headerImgShadowCont{
+		overflow:hidden;position:absolute;width:400px;height:180px;left:450px;top:345px;
+	}
+
+	.headerImgShadowRealCont{
+		overflow:hidden;position:absolute;width:400px;height:300px;left:450px;top:240px;
+	}
+
+	.singleImageCont{
+		width:400px;height:300px;position:absolute;left:0px;top:300px; 
+
+	}
+	.singleImageShadowCont{
+		width:400px;height:300px;position:absolute;left:0px;top:-300px;  --border:1px solid #ff0;
+	}
+
+	.singleImageShadowRealCont{
+		width:400px;height:300px;left:0px;top:10px;z-index:10; -- border:1px solid 0ff;
+	}
+
+	.singleImage{
+		width:400px;height:300px;
+		border-radius:5px;
+		--border:1px solid #fff;
+	}
+	.singleImageShadow{
+		width:400px;height:300px;border-radius: 5px;
+	}
+	.singleImageShadowReal{
+		width:400px;height:300px;--border-radios:5px;
+	}
+	.menu{
+	
+		position:absolute;
+		top:320px;
+		opacity:0;filter:alpha(opacity=0);
+		text-align:center;
+		font-weight:bold;
+		font-family: Thahoma, Arial;
+	}
+	.menuIcon{
+		cursor:pointer;
+	}
+	.menuBack{
+		width:100%;height:100%;
+		opacity: 0.30;
+		filter: alpha(opacity=30);
+		background-color:#fff;
+		
+		
+	}
+	.menuTextCont{
+		top:450px;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		
+	}
+	.menu_text{
+		color: #fff;
+		text-align:center;
+		font-weight:bold;
+		FONT-FAMILY: Thahoma, Arial;
+	}
+	.menu1{left:300px; width:100px;height:20px;position:absolute;}
+	.menu2{left:450px;position:absolute; }
+	.menu3{left:600px;position:absolute; }
+	.menu4{left:750px;position:absolute;}
+	.menu5{left:900px;position:absolute;}
+	#titleDiv{
+		position:absolute;left:220px;top:140px;
+		opacity:0;filter:alpha(opacity=0);
+	
+	}
+	#docsDiv{
+		position:absolute;
+		left:790px;top:80px;
+		opacity:0;filter:alpha(opacity=0);
+	}
+	.contents{
+		position:absolute;
+		top:500px;
+		left:250px;
+		width: 800px;
+		height:auto;
+		--border: 1px solid #fff;
+		color:#fff;
+		opacity:0;filter:alpha(opacity=0);
+	}
+	
+	.accordTabTitle{
+		cursor: pointer; cursor: hand;
+		border:1px solid #fff;
+		height:30px;
+		border-radius:5px;
+		width:150px;
+		margin-top:4px;
+	}
+	.accordTabWideTitle{
+		width:300px;
+	}
+	.accordTabTitleText{
+		color:#fff;
+		font-weight:bold;
+		font-family: Thahoma, Arial;
+		margin-left:10px;
+		--border:1px solid #ff0;		
+	}
+	.accordTabIcon{
+		float:right;
+		width:16px;
+		height:16px;
+		
+	}
+	.accordTabContents{
+		color:#fff;
+		padding-top: 0px; border-top-style: none; padding-bottom: 0px; border-bottom-style: none; 
+		overflow: hidden; 
+		opacity:0;filter:alpha(opacity=0);
+		height:0px;}
+	.accordPraxis{width:100%;height:auto;}
+	.caseDivCont{
+		--border: 1px solid #fff;
+		display:block;
+		overflow:hidden;
+		height:0px;
+		position:relative;
+		top:1px;
+	}
+	.caseDiv{
+		width:280px;
+		height:165px;
+		position:absolute;
+		opacity:0;filter:alpha(opacity=0);
+	}
+	.caseImg{
+		border-radius:5px;
+		border :2px solid #ff0;
+	}
+	.caseBefore{
+		left:210px;
+		top:0px;
+	}
+	.caseAfter{
+		left:210px;
+		top:0px;
+	}
+	.caseViewer{
+		cursor: pointer; cursor: hand;
+	}
+	.tourDiv{
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:600px;
+		height:450px;
+		opacity:0;filter:alpha(opacity=0);
+	}
